@@ -12,7 +12,7 @@ public class RainTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("RainSoundTrigger"))
         {
             outdoorRainSound.Stop();
             indoorRainSound.Play();

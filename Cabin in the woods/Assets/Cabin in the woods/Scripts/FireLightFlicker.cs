@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePlace : MonoBehaviour
+public class FireLightFlicker : MonoBehaviour
 {
     [SerializeField]
     private Light light;

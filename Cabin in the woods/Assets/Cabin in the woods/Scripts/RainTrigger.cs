@@ -10,14 +10,18 @@ public class RainTrigger : MonoBehaviour
     [SerializeField]
     private AudioSource indoorRainSound;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             outdoorRainSound.Stop();
             indoorRainSound.Play();
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
             outdoorRainSound.Play();
             indoorRainSound.Stop();

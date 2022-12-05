@@ -48866,9 +48866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef295580e525b346bd1863f4292d92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightScale: {fileID: 1631457211}
-  scaleValueMin: 0.5
-  scaleValueMax: 0.5
 --- !u!1 &1640911619
 GameObject:
   m_ObjectHideFlags: 0
@@ -70322,6 +70319,7 @@ GameObject:
   - component: {fileID: 6704228930210666912}
   - component: {fileID: 6704228930212595553}
   - component: {fileID: 6704228930212595555}
+  - component: {fileID: 6704228930212595566}
   - component: {fileID: 6704228930212595563}
   - component: {fileID: 6704228930212595562}
   - component: {fileID: 6704228930212595561}
@@ -70375,8 +70373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ab0185426ee084e90a3e917e08a77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundTimer: 1
   openDoorSound: {fileID: 6704228930212595561}
   closeDoorSound: {fileID: 8300000, guid: ec108488da021034e89a5e57a9011e0c, type: 3}
+  doorAnimator: {fileID: 6704228930212595566}
 --- !u!1 &6704228930212595556
 GameObject:
   m_ObjectHideFlags: 0
@@ -70821,6 +70821,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 0175e85a018348c40a187b6113a6ee53, type: 3}
+--- !u!95 &6704228930212595566
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704228930212595552}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d2b8ca6991b14740bf22a63ae99ec08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &6704228930213092160
 Transform:
   m_ObjectHideFlags: 0

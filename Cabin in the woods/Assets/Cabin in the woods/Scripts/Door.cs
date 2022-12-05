@@ -5,6 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private bool isOpen;
+    private float soundTimerStorage;
+
+    [SerializeField]
+    private float soundTimer;
 
     [SerializeField]
     private AudioSource openDoorSound;
@@ -12,22 +16,36 @@ public class Door : MonoBehaviour
     [SerializeField]
     private AudioClip closeDoorSound;
 
+    [SerializeField]
+    private Animator doorAnimator;
+
+    private void Start()
+    {
+        soundTimerStorage = soundTimer;
+    }
+
     public void OpenDoor()
     {
         if(!isOpen)
         {
-            Vector3 openDoor = new Vector3(0f, 110f, 0f);
-            transform.Rotate(openDoor);
             isOpen = true;
+            doorAnimator.SetBool("isOpen", true);
             openDoorSound.Play();
-            
         }
         else
         {
-            Vector3 closeDoor = new Vector3(0f, 0f, 0f);
-            transform.Rotate(closeDoor);
             isOpen = false;
-            openDoorSound.PlayOneShot(closeDoorSound);
+            doorAnimator.SetBool("isOpen", false);
+            
+            if (soundTimer > 0)
+            {
+                soundTimer -= Time.deltaTime;
+            }
+            else
+            {
+                openDoorSound.PlayOneShot(closeDoorSound);
+                soundTimer = soundTimerStorage;
+            }
         }
     }
 }

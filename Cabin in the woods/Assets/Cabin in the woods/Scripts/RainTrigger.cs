@@ -17,6 +17,10 @@ public class RainTrigger : MonoBehaviour
             outdoorRainSound.Stop();
             indoorRainSound.Play();
         }
+        else
+        {
+            return;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -25,6 +29,10 @@ public class RainTrigger : MonoBehaviour
         {
             outdoorRainSound.Play();
             indoorRainSound.Stop();
+        }
+        else
+        {
+            return;
         }
     }
 }
